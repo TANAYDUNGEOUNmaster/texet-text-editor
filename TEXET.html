@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html> 
+<head> 
+  <title>TEX&#398;T</title>
+ 
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+ 
+  <style type="text/css">
+  	@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+    body{
+      
+      background-image: url("https://wallpapercave.com/wp/wp2754084.jpg");
+      background-repeat: no-repeat;
+	background-size: cover;
+      margin: 10;
+      font-family: Verdana, Arial, sans-serif;
+      font-size: 16px;
+      color: white;
+    }
+     
+    h1 {
+
+  font-size: 80px;
+  text-align: center;
+  font-family: 'Orbitron', sans-serif;
+  color: #fff;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #0073e6, 0 0 20px #0073e6, 0 0 25px #0073e6, 0 0 30px #0073e6, 0 0 35px #0073e6;
+  }
+  to {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #0073e6, 0 0 40px #0073e6, 0 0 50px #0073e6, 0 0 60px #0073e6, 0 0 70px #0073e6;
+  }
+}
+.center {
+  margin: auto;
+  width: 70%;
+  border: solid white;
+  border-radius: 10px;
+  padding:1px;
+  border-width: 3px;
+}
+       </style>
+
+</head>
+<body>
+
+  <h1 class="glow" style="text-align: center;">TEX&#398;T</h1>  
+
+
+  <h3 style="text-align: center;">Text editor with auto-save</h3>
+ 
+   
+  <div class="center" id="editor" contenteditable="true" style="font-family:courier; color: #66ffcc;border:solid white; border-radius:10px; border-width:3px; padding:4px;"></div>
+  
+  
+
+  <script>
+
+    
+    if (localStorage.getItem('text_in_editor') !== null) {
+ 
+         
+        document.getElementById('editor').innerHTML = localStorage.getItem('text_in_editor');
+      }
+
+    
+    document.addEventListener('keydown', function(e) {
+
+      
+      localStorage.setItem('text_in_editor', document.getElementById('editor').innerHTML);
+    });
+  </script>
+ 
+</body>
+ 
+</html>
